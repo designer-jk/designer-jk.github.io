@@ -454,10 +454,12 @@ a:hover {
   margin: 0;
   font-size: 14px;
   font-weight: 400;
+  font-family: var(--default-font);
 }
 
 .page-title .breadcrumbs ol li+li {
   padding-left: 10px;
+  font-family: var(--default-font);
 }
 
 .page-title .breadcrumbs ol li+li::before {
@@ -519,11 +521,34 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resume-section ul li, .resume-section .company{
+  font-family: var(--default-font);
+}
+
+.about-social-links{
   display: flex;
-  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0 0 0;
+}
+
+.about-social-links a{
+  width: 40px;
+  height: 40px;
+}
+
+.description ul li{
+    font-family: var(--default-font);
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .hero .background-elements {
@@ -619,6 +644,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 40px;
   max-width: 500px;
+  font-family: var(--default-font);
 }
 
 .hero .hero-actions {
@@ -929,9 +955,9 @@ section,
   width: 18px;
 }
 
-.about .about-content {
+/*.about .about-content {
   padding-left: 3rem;
-}
+}*/
 
 @media (max-width: 991px) {
   .about .about-content {
