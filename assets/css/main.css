@@ -108,7 +108,7 @@ a:hover {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #1b1b1b;
+  --background-color: #fff;
   --contrast-color: #444444;
   color: var(--default-color);
   position: fixed;
@@ -120,6 +120,11 @@ a:hover {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
+  
+}
+
+.navmenu ul li a{
+  color: var(--default-color);
 }
 
 .header .header-container {
@@ -130,7 +135,11 @@ a:hover {
 }
 
 .header .social-links {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
 }
 
 .header .social-links a {
@@ -138,7 +147,6 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
   margin: 0 2px;
   border-radius: 50%;
@@ -152,6 +160,8 @@ a:hover {
    color: var(--accent-color);
    background: var(--background-color);
 }
+
+
 
 @media (min-width: 1200px) {
 
@@ -259,7 +269,9 @@ a:hover {
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus {
-  color: var(--nav-hover-color);
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: larger;
 }
 
 .navmenu a:hover .navicon,
