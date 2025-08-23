@@ -2,22 +2,22 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'inSans-regular';
-  src: url('../Instrument_Sans/static/InstrumentSans-Regular.ttf') format("truetype");
+  font-family: 'neuemontreal-regular';
+  src: url('../Neue-Montreal/NeueMontreal-Regular.otf') format("opentype");
 
-  font-family: 'fraunces-medium';
-  src: url('../Fraunces/static/Fraunces_72pt-SemiBold.ttf') format("truetype");
+  font-family: 'neuemontreal-medium';
+  src: url('../Neue-Montreal/NeueMontreal-Medium.otf') format("opentype");
 
-  font-family: 'fraunces-bold';
-  src: url('../Fraunces/static/Fraunces_72pt-Bold.ttf') format("truetype");
+  font-family: 'neuemontreal-bold';
+  src: url('../Neue-Montreal/NeueMontreal-Bold.otf') format("opentype");
 
 }
 
 :root {
-  --default-font: "inSans-regular", sans-serif;
-  --heading-font: "fraunces-bold",  sans-serif;
+  --default-font: "neuemontreal-regular", sans-serif;
+  --heading-font: "neuemontreal-bold",  sans-serif;
   --nav-font: "sf-regular",  sans-serif;
-  --medium-font: "fraunces-medium", sans-serif;
+  --medium-font: "neuemontreal-medium", sans-serif;
 }
 
 li{
@@ -30,13 +30,13 @@ li{
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #FBF8EF; /* Background color for the entire website, including individual sections */
-  --default-color: #333446; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #333446; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #D98324; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+    --background-color: #212121;
+    --default-color: #F7F7F8;
+    --heading-color: #F7F7F8;
+    --accent-color: #03d9c8;
+    --surface-color: #323232;
+    --contrast-color: #212121;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -58,10 +58,10 @@ li{
 
 .dark-background {
   --background-color: #FBF8EF;
-  --default-color: #333446;
-  --heading-color: #333446;
-  --surface-color: #D98324;
-  --contrast-color: #ffffff;
+  --default-color: #fff;
+  --heading-color: #fff;
+  --surface-color: #323232;
+  --contrast-color: #212121;
 }
 
 /* Smooth scroll */
@@ -108,9 +108,9 @@ a:hover {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #fff;
-  --contrast-color: #444444;
-  color: var(--default-color);
+  --background-color: #323232;
+  --contrast-color: #fff;
+  color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
@@ -124,7 +124,7 @@ a:hover {
 }
 
 .navmenu ul li a{
-  color: var(--default-color);
+  color: #ffffff7d;
 }
 
 .header .header-container {
@@ -442,7 +442,7 @@ a:hover {
 }
 
 .page-title h1 {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
 }
 
@@ -452,7 +452,7 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 400;
   font-family: var(--default-font);
 }
@@ -476,7 +476,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: clip;
 }
 
