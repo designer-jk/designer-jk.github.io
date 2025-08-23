@@ -1253,7 +1253,7 @@ section,
   position: relative;
   padding-bottom: 15px;
   text-align: center;
-  font-family: var(--heading-font);
+  font-family: var(--medium-font);
 }
 
 .skills .skills-category h3:after {
@@ -1452,7 +1452,7 @@ section,
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family: var(--medium-font);
   font-weight: 600;
 }
 
@@ -1641,7 +1641,7 @@ section,
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
