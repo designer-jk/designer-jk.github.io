@@ -2,22 +2,26 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'neuemontreal-regular';
-  src: url('../Neue-Montreal/NeueMontreal-Regular.otf') format("opentype");
+  font-family: 'ubuntu-regular';
+  src: url('../Ubuntu/Ubuntu-Regular.ttf') format("truetype");
 
-  font-family: 'neuemontreal-medium';
-  src: url('../Neue-Montreal/NeueMontreal-Medium.otf') format("opentype");
+  font-family: 'ubuntu-medium';
+  src: url('../Ubuntu/Ubuntu-Medium.ttf') format("truetype");
 
-  font-family: 'neuemontreal-bold';
-  src: url('../Neue-Montreal/NeueMontreal-Bold.otf') format("opentype");
+  font-family: 'Bricolage-Grotesque-bold';
+  src: url('../Bricolage_Grotesque/static/BricolageGrotesque_24pt-Bold.ttf') format("truetype");
 
 }
 
 :root {
-  --default-font: "neuemontreal-regular", sans-serif;
-  --heading-font: "neuemontreal-bold",  sans-serif;
-  --nav-font: "sf-regular",  sans-serif;
-  --medium-font: "neuemontreal-medium", sans-serif;
+  --default-font: "ubuntu-regular", sans-serif;
+  --heading-font: "Bricolage_Grotesque",  sans-serif;
+  --nav-font: "ubuntu-regular",  sans-serif;
+  --medium-font: "ubuntu-medium", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: Bricolage-Grotesque-bold;
 }
 
 li{
@@ -122,8 +126,8 @@ a:hover {
   
 }
 
-.navmenu ul li a{
-  color: #ffffff7d;
+.navmenu ul li a {
+    color: #ffffff;
 }
 
 .header .header-container {
@@ -440,6 +444,8 @@ a:hover {
   padding-bottom: 25px;
 }
 
+
+
 .page-title h1 {
   font-size: 32px;
   font-weight: 700;
@@ -601,6 +607,8 @@ section,
   margin-bottom: 15px;
   color: var(--heading-color);
 }
+
+
 
 .hero .hero-text h1 .accent-text {
   color: var(--accent-color);
@@ -1451,7 +1459,7 @@ section,
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   color: var(--heading-color);
-  font-family: var(--medium-font);
+  /*font-family: var(--medium-font);*/
   font-weight: 600;
 }
 
