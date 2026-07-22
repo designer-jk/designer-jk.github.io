@@ -18,6 +18,7 @@
   --heading-font: "Bricolage_Grotesque",  sans-serif;
   --nav-font: "ubuntu-regular",  sans-serif;
   --medium-font: "ubuntu-medium", sans-serif;
+  color-scheme: light;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -38,9 +39,41 @@ li{
     --background-color: #ffffff;
     --default-color: #2b2b2b;
     --heading-color: #261d1d;
-    --accent-color: #0341d9;
+    --accent-color: #5b6cff;
     --surface-color: #f4f4f4;
     --contrast-color: #ffffff;
+    --card-color: #ffffff;
+    --border-color: rgba(43, 43, 43, 0.16);
+    --theme-toggle-bg: #f4f4f4;
+    --theme-toggle-color: #2b2b2b;
+}
+
+body[data-theme="dark"] {
+  --background-color: #0f172a;
+  --default-color: #f8fafc;
+  --heading-color: #ffffff;
+  --accent-color: #7c4dff;
+  --surface-color: #111827;
+  --contrast-color: #020617;
+  --card-color: #1f2937;
+  --border-color: rgba(248, 250, 252, 0.16);
+  --theme-toggle-bg: #111827;
+  --theme-toggle-color: #f8fafc;
+  color-scheme: dark;
+}
+
+body[data-theme="light"] {
+  --background-color: #ffffff;
+  --default-color: #2b2b2b;
+  --heading-color: #261d1d;
+  --accent-color: #0341d9;
+  --surface-color: #f4f4f4;
+  --contrast-color: #ffffff;
+  --card-color: #ffffff;
+  --border-color: rgba(43, 43, 43, 0.16);
+  --theme-toggle-bg: #f4f4f4;
+  --theme-toggle-color: #2b2b2b;
+  color-scheme: light;
 }
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
@@ -50,6 +83,24 @@ li{
   --nav-dropdown-background-color: #393939; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ececec; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+body[data-theme="dark"] {
+  --nav-color: rgba(248, 250, 252, 0.82);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #020617;
+  --nav-dropdown-background-color: #020617;
+  --nav-dropdown-color: #f8fafc;
+  --nav-dropdown-hover-color: #e2e8f0;
+}
+
+body[data-theme="light"] {
+  --nav-color: rgba(43, 43, 43, 0.8);
+  --nav-hover-color: #5b6cff;
+  --nav-mobile-background-color: #393939;
+  --nav-dropdown-background-color: #393939;
+  --nav-dropdown-color: #ffffff;
+  --nav-dropdown-hover-color: #ececec;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -83,6 +134,22 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section,
+.page-title,
+.skills-category,
+.about-content,
+.portfolio-wrap,
+.filters-wrapper,
+.resume-item,
+.service-item,
+.contact,
+.testimonial-item {
+  background-color: var(--card-color);
+  color: var(--default-color);
+  border-color: var(--border-color);
 }
 
 a {
@@ -111,9 +178,7 @@ a:hover {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #f4f4f4;
-  --contrast-color: #fff;
-  color: #ffffff;
+  color: var(--contrast-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -127,14 +192,47 @@ a:hover {
 }
 
 .navmenu ul li a {
-    color: #2b2b2b;
+    color: var(--nav-color);
 }
 
 .header .header-container {
   border-radius: 20px;
   padding: 15px;
   background-color: var(--background-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border: 1px solid var(--border-color);
+}
+
+.theme-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--theme-toggle-bg);
+  color: var(--theme-toggle-color);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-family: var(--default-font);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  position: fixed;
+  top: 15px;
+  right: 65px;
+  z-index: 9999;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle i {
+  font-size: 1rem;
+}
+
+@media (max-width: 1199px) {
+  .theme-toggle {
+    display: inline-flex;
+  }
 }
 
 .header .social-links {

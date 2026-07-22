@@ -10,16 +10,79 @@
   "use strict";
 
   /**
-   * Header toggle
+   * Theme toggle
    */
+  const header = document.querySelector('#header');
   const headerToggleBtn = document.querySelector('.header-toggle');
 
+  function applyTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    if (!themeToggle) return;
+
+    const icon = themeToggle.querySelector('i');
+    const label = themeToggle.querySelector('span');
+
+    if (theme === 'dark') {
+      icon.className = 'bi bi-moon-fill';
+      label.textContent = 'Dark';
+      themeToggle.setAttribute('aria-label', 'Switch to light mode');
+      themeToggle.setAttribute('aria-pressed', 'true');
+    } else {
+      icon.className = 'bi bi-sun-fill';
+      label.textContent = 'Light';
+      themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+      themeToggle.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  function initThemeToggle() {
+    if (!header) return;
+
+    const existingToggle = document.querySelector('[data-theme-toggle]');
+    if (existingToggle) {
+      existingToggle.remove();
+    }
+
+    const themeToggle = document.createElement('button');
+    themeToggle.type = 'button';
+    themeToggle.className = 'theme-toggle';
+    themeToggle.setAttribute('data-theme-toggle', '');
+    themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i><span>Light</span>';
+
+    if (headerToggleBtn) {
+      header.insertBefore(themeToggle, headerToggleBtn.nextSibling);
+    } else {
+      header.prepend(themeToggle);
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    const preferredTheme = savedTheme === 'dark' || savedTheme === 'light'
+      ? savedTheme
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    applyTheme(preferredTheme);
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  }
+
+  initThemeToggle();
+
+  /**
+   * Header toggle
+   */
   function headerToggle() {
     document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
