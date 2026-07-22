@@ -203,7 +203,7 @@ a:hover {
 }
 
 .theme-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   border: 1px solid var(--border-color);
@@ -217,7 +217,7 @@ a:hover {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   position: fixed;
   top: 15px;
-  right: 65px;
+  right: 15px;
   z-index: 9999;
 }
 
@@ -231,7 +231,7 @@ a:hover {
 
 @media (max-width: 1199px) {
   .theme-toggle {
-    display: inline-flex;
+    right: 65px;
   }
 }
 
