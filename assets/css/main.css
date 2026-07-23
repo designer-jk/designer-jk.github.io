@@ -53,9 +53,9 @@ body[data-theme="dark"] {
   --default-color: #f8fafc;
   --heading-color: #ffffff;
   --accent-color: #7c4dff;
-  --surface-color: #111827;
+  --surface-color: #1f2937;
   --contrast-color: #020617;
-  --card-color: #1f2937;
+  --card-color: #273449;
   --border-color: rgba(248, 250, 252, 0.16);
   --theme-toggle-bg: #111827;
   --theme-toggle-color: #f8fafc;
@@ -146,7 +146,17 @@ section,
 .resume-item,
 .service-item,
 .contact,
-.testimonial-item {
+.testimonial-item,
+.services .service-card,
+.testimonials .testimonial-content,
+.contact .contact-form,
+.portfolio-details .portfolio-info,
+.portfolio-details .portfolio-description .features .feature-item,
+.service-details .content .features .feature-box,
+.service-details .service-info,
+.service-details .related-services,
+.skills .skills-category,
+.skills .skill-box {
   background-color: var(--card-color);
   color: var(--default-color);
   border-color: var(--border-color);
@@ -193,13 +203,31 @@ a:hover {
 
 .navmenu ul li a {
     color: var(--nav-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navmenu ul li a:hover,
+.navmenu ul li a.active {
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding-left: 20px;
 }
 
 .header .header-container {
   border-radius: 20px;
-  padding: 15px;
-  background-color: var(--background-color);
+  padding: 25px 20px;
+  background-color: var(--card-color);
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .theme-toggle {
@@ -236,7 +264,10 @@ a:hover {
 }
 
 .header .social-links {
-    margin: 0 0 10px 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
     width: 100%;
     display: flex;
     gap: 12px;
@@ -248,18 +279,51 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--default-color);
+  color: var(--accent-color);
   margin: 0 2px;
   border-radius: 50%;
   text-align: center;
-  width: 40px;
-  height: 40px;
-  transition: 0.3s;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--accent-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.header .social-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: -1;
+  transition: left 0.3s ease;
 }
 
 .header .social-links a:hover {
-   color: var(--accent-color);
-   background: var(--background-color);
+  color: var(--contrast-color);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+.header .social-links a:hover::before {
+  left: 0;
+}
+
+.header .social-links a img {
+  transition: filter 0.3s ease;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.header .social-links a:hover img {
+  filter: brightness(0) invert(1);
 }
 
 
@@ -321,8 +385,11 @@ a:hover {
 
 .navmenu ul {
   list-style: none;
-  padding: 0 0 20px 0;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .navmenu a,
@@ -1340,9 +1407,10 @@ section,
 # Skills Section
 --------------------------------------------------------------*/
 .skills .skills-category {
-  background-color: #f4f4f4;
+  background-color: var(--card-color);
   padding: 30px;
   border-radius: 8px;
+  border: 1px solid var(--border-color);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   height: 100%;
   transition: transform 0.3s;
@@ -1420,9 +1488,10 @@ section,
 }
 
 .skills .skill-box {
-  background-color: var(--surface-color);
+  background-color: var(--card-color);
   padding: 25px 20px;
   border-radius: 8px;
+  border: 1px solid var(--border-color);
   text-align: center;
   transition: all 0.3s;
   height: 100%;
@@ -1549,6 +1618,53 @@ section,
   transition: width 1s ease;
 }
 
+.resume .resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resume .resume-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.resume .resume-actions .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.resume .resume-actions .btn-primary:hover,
+.resume .resume-actions .btn-primary:focus {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.resume .resume-actions .btn-outline-primary {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.resume .resume-actions .btn-outline-primary:hover,
+.resume .resume-actions .btn-outline-primary:focus {
+  background-color: var(--accent-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
 .resume .resume-section {
   margin-bottom: 3rem;
 }
@@ -1566,10 +1682,18 @@ section,
 }
 
 .resume .resume-section .resume-item {
-  padding-left: 1.5rem;
-  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  padding: 1.5rem;
+  padding-left: 2rem;
+  border-left: 3px solid var(--accent-color);
   margin-bottom: 2rem;
   position: relative;
+  background-color: color-mix(in srgb, var(--card-color), var(--accent-color) 2%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.resume .resume-section .resume-item:hover {
+  background-color: color-mix(in srgb, var(--card-color), var(--accent-color) 4%);
 }
 
 .resume .resume-section .resume-item:before {
