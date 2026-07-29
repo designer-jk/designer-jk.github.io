@@ -2,11 +2,11 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'ubuntu-regular';
-  src: url('../Ubuntu/Ubuntu-Regular.ttf') format("truetype");
+  font-family: 'albersans-regular';
+  src: url('../Albert_Sans/static/AlbertSans-Regular.ttf') format("truetype");
 
-  font-family: 'ubuntu-medium';
-  src: url('../Ubuntu/Ubuntu-Medium.ttf') format("truetype");
+  font-family: 'albersans-Medium';
+  src: url('../Albert_Sans/static/AlbertSans-Medium.ttf') format("truetype");
 
   font-family: 'Bricolage-Grotesque-bold';
   src: url('../Bricolage_Grotesque/static/BricolageGrotesque_24pt-Bold.ttf') format("truetype");
@@ -14,10 +14,10 @@
 }
 
 :root {
-  --default-font: "ubuntu-regular", sans-serif;
+  --default-font: "albersans-regular", sans-serif;
   --heading-font: "Bricolage_Grotesque",  sans-serif;
-  --nav-font: "ubuntu-regular",  sans-serif;
-  --medium-font: "ubuntu-medium", sans-serif;
+  --nav-font: "albersans-regular",  sans-serif;
+  --medium-font: "albersans-medium", sans-serif;
   color-scheme: light;
 }
 
@@ -221,6 +221,7 @@ a:hover {
 .header .header-container {
   border-radius: 20px;
   padding: 25px 20px;
+  height: fit-content !important;
   background-color: var(--card-color);
   border: 1px solid var(--border-color);
   display: flex;
