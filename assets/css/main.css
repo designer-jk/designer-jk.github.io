@@ -1710,6 +1710,43 @@ section,
   color: #8B1E2E;
 }
 
+.redOuter{
+  background: #FBE6E7;
+  padding: 12px 24px;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.grayOuter{
+  background: #FAF7F2;
+  padding: 12px 24px;
+  border-radius: 100px;
+  width: fit-content;
+  
+}
+
+
+.viewmoreCS img{
+  width: 100%;
+}
+
+.viewmoreCS{
+  border: 1px solid #8B1E2E;
+  border-radius: 12px;
+  overflow: clip;
+    filter: drop-shadow(0px 0px 10px #2b2b2b00);
+}
+
+.redOuter h5{
+  margin: 0;
+}
+
+.morecs h3{
+  text-align: center;
+  margin-bottom: 16px;
+
+}
+
 .role .role-badge{
     margin: 0;
     padding: 8px;
@@ -1914,7 +1951,7 @@ display: flex;
   left: 0;
   right: 0;
   padding: 25px;
-  background: linear-gradient(to top, rgb(255 255 255) 0%, rgb(255 255 255 / 60%) 60%, rgba(0, 0, 0, 0) 100%);
+  background: var(--bs-dark);
   z-index: 3;
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   transform: translateY(20px);
@@ -1928,7 +1965,7 @@ display: flex;
 
 .portfolio .portfolio-wrap .portfolio-info .category {
   display: inline-block;
-  color: var(--default-colorr);
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
