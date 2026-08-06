@@ -1951,7 +1951,8 @@ display: flex;
   left: 0;
   right: 0;
   padding: 25px;
-  background: var(--bs-dark);
+  background: #ffffff8a;
+  backdrop-filter: blur(15px);
   z-index: 3;
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   transform: translateY(20px);
@@ -1965,7 +1966,7 @@ display: flex;
 
 .portfolio .portfolio-wrap .portfolio-info .category {
   display: inline-block;
-  color: #fff;
+  color: #2b2b2b;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1975,7 +1976,7 @@ display: flex;
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: var(--contrast-color);
+  color: #2b2b2b;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -1987,7 +1988,9 @@ display: flex;
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links a {
   color: var(--contrast-color);
-  width: 40px;
+  width: fit-content;
+    padding: 12px 12px;
+    border-radius: 8px !important;
   height: 40px;
   display: flex;
   align-items: center;
@@ -2014,6 +2017,8 @@ display: flex;
 .portfolio .portfolio-wrap:hover .portfolio-info {
   transform: translateY(0);
   opacity: 1;
+  height: 350px;
+    align-content: center;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-info .content {
