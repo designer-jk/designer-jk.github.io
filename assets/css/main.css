@@ -1710,6 +1710,15 @@ section,
   color: #8B1E2E;
 }
 
+.lpgPrimary{
+  color: #2563EB;
+  text-align: left;
+}
+
+.lpgSecondary{
+  color: #334155;
+}
+
 .redOuter{
   background: #FBE6E7;
   padding: 12px 24px;
