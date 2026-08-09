@@ -650,7 +650,7 @@ a:hover {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: #2b2b2b;
+  color: var(--default-color);
   background-color: var(--background-color);
   padding: 30px 0;
   
@@ -2961,3 +2961,8 @@ display: flex;
   border: 1px solid #dddddd;
   border-radius: 12px;
 }
+
+.name{
+  color: var(--accent-color) !important;
+}
+
