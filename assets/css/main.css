@@ -2966,3 +2966,20 @@ display: flex;
   color: var(--accent-color) !important;
 }
 
+.embeded{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #0a66c2;
+    width: 100%;
+}
+
+.embeded img{
+  width: 32px;
+}
+
+.embeded a{
+  color: white;
+}

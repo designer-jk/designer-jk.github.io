@@ -290,3 +290,40 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+function calculateExperience() {
+    // Your employment periods
+    const employmentPeriods = [
+        {
+            start: new Date("2021-10-08"),
+            end: new Date("2023-12-16")
+        },
+        {
+            start: new Date("2024-04-17"),
+            end: new Date() // Present
+        }
+    ];
+
+    // Calculate total working days
+    let totalDays = 0;
+
+    employmentPeriods.forEach(period => {
+        const endDate = period.end > new Date() ? new Date() : period.end;
+
+        const difference = endDate - period.start;
+        totalDays += difference / (1000 * 60 * 60 * 24);
+    });
+
+    // Average days per year (accounts for leap years)
+    const years = totalDays / 365.2425;
+
+    // Round to one decimal place
+    const experience = Math.floor(years * 10) / 10;
+
+    // Update HTML
+    document.getElementById("experience-years").textContent =
+        experience.toFixed(1) + "+";
+}
+
+// Run calculation
+calculateExperience();
