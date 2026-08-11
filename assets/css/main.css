@@ -1719,6 +1719,16 @@ section,
   color: #334155;
 }
 
+
+.safePayPrimary{
+  color: #F43F5E;
+  text-align: left;
+}
+
+.safePaySecondary{
+  color: #7C3AED;
+}
+
 .redOuter{
   background: #FBE6E7;
   padding: 12px 24px;
@@ -1735,15 +1745,18 @@ section,
 }
 
 
-.viewmoreCS img{
-  width: 100%;
+.viewmoreCS img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.viewmoreCS{
-  border: 1px solid #8B1E2E;
-  border-radius: 12px;
-  overflow: clip;
+.viewmoreCS {
+    border: 1px solid #8B1E2E;
+    border-radius: 12px;
+    overflow: clip;
     filter: drop-shadow(0px 0px 10px #2b2b2b00);
+    height: 100%;
 }
 
 .redOuter h5{
@@ -2982,4 +2995,57 @@ display: flex;
 
 .embeded a{
   color: white;
+}
+
+.safePay, .safePay .section{
+  background-color: #0F051D;
+}
+
+.safePay .cs-card{
+  background-color: #1E0B36;
+  border: 1px solid #7C3AED;
+}
+
+.safePay .intro{
+  color: #F5F3FF;
+}
+
+.safePay .role .role-badge {
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #7C3AED;
+    width: fit-content;
+    border-radius: 4px;
+    color: #F5F3FF;
+    background-color: #ffffff15;
+    height: fit-content;
+}
+
+.safePay .gray-back {
+    padding: 16px 10px;
+    background-color: #1E0B36;
+  border: 1px solid #7C3AED;
+    border-radius: 12px;
+}
+
+.safePay .sub-head h6 {
+    color: #F5F3FF;
+}
+
+.safePay .footer{
+  background-color: #0F051D;
+  color: #F5F3FF;
+}
+
+.safePay .redOuter {
+    background: #FBE6E715;
+    padding: 12px 24px;
+    border-radius: 100px;
+    width: fit-content;
+    color: #F5F3FF;
+    border: 1px solid #7C3AED;
+}
+
+.safePay .current{
+  color: #F5F3FF;
 }
